@@ -25,3 +25,28 @@ function cleanString(stringVar){
 	
 }
 
+/**
+** Function to get the length of the ISBN without hyphens.
+** takes as an argument a variable isbn that contains the ISBN number
+** @return an digit containing the last character of ISBN.
+**/
+
+function isbnLength(isbn) {
+	return cleanString(isbn).length;
+}
+
+/**
+** Function to get the ISBN check digit (The last character in the ISBN) 
+** takes as an argument a variable isbn that contains the ISBN number
+** @return an digit containing the last character of ISBN.
+**/
+
+function isbnCheck(isbn) {
+	return cleanString(isbn).charAt([isbn.length-1]);
+}
+
+/**
+** Function to get the registration group prefix of the ISBN (The first three characters) 
+** takes as an argument a variable isbn that contains the ISBN number
+** @return an digit containing the last character of ISBN.
+**/
