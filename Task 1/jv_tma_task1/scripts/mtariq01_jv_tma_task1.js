@@ -28,7 +28,7 @@ function cleanString(stringVar){
 /**
 ** Function to get the length of the ISBN without hyphens.
 ** takes as an argument a variable isbn that contains the ISBN number
-** @return an digit containing the last character of ISBN.
+** @return the length of ISBN.
 **/
 
 function isbnLength(isbn) {
@@ -42,11 +42,27 @@ function isbnLength(isbn) {
 **/
 
 function isbnCheck(isbn) {
-	return cleanString(isbn).charAt([isbn.length-1]);
+	return (cleanString(isbn).charAt([isbn.length-1])).toString();
 }
 
 /**
 ** Function to get the registration group prefix of the ISBN (The first three characters) 
 ** takes as an argument a variable isbn that contains the ISBN number
-** @return an digit containing the last character of ISBN.
+** @return the first three characters of ISBN.
 **/
+
+function regPrefix(isbn) {
+	let cleanIsbn = cleanString(isbn);
+	let regGroup = "";
+	for (let i = 0; i < 3; i++){
+		regGroup += cleanIsbn.charAt(i);
+	}
+	return regGroup;
+}
+
+//** Code for the output of the application **//
+
+console.log("The ISBN is " + ISBN);
+console.log("This is a " + isbnLength(ISBN) + " digit ISBN");
+console.log("The ISBN check digit is " + isbnCheck(ISBN));
+console.log("The ISBN registration group prefix is " + regPrefix(ISBN));
