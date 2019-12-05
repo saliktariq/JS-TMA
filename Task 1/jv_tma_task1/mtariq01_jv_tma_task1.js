@@ -4,11 +4,6 @@
 **/
 
 /**
-** @param string ISBN to contain the ISBN 
-**/
-let ISBN = "978-0-545-01022-1";
-
-/**
 ** Function to iterate through a string and gets rid of any dashes, 
 ** takes as an argument a variable isbn containing string variable.
 ** @return a string containing only integer digits of type string.
@@ -62,7 +57,17 @@ function regPrefix(isbn) {
 
 //** Code for the output of the application to the console **//
 
+function task1(){
+
+/**
+** @param string ISBN to contain the ISBN number
+**/
+let ISBN = "978-0-545-01022-1";
+
 console.log("The ISBN is " + ISBN);
 console.log("This is a " + isbnLength(ISBN) + " digit ISBN");
 console.log("The ISBN check digit is " + isbnCheck(ISBN));
 console.log("The ISBN registration group prefix is " + regPrefix(ISBN));
+}
+
+task1();
