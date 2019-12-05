@@ -4,21 +4,21 @@
 **/
 
 /**
-** @param constant ISBN to contain the string variable ISBN 
+** @param string ISBN to contain the ISBN 
 **/
-const ISBN = "978-0-545-01022-1";
+let ISBN = "978-0-545-01022-1";
 
 /**
 ** Function to iterate through a string and gets rid of any dashes, 
-** takes as an argument a variable stringVar containing string variable/constant
+** takes as an argument a variable isbn containing string variable.
 ** @return a string containing only integer digits of type string.
 **/ 
 
-function cleanString(stringVar){
+function cleanString(isbn){
 	let cleanStr = '';
-	for (let i = 0; i < stringVar.length; i++){
-		if (Number.isInteger(parseInt(stringVar.charAt(i)))) { 
-			cleanStr += stringVar.charAt(i);
+	for (let i = 0; i < isbn.length; i++){
+		if (Number.isInteger(parseInt(isbn.charAt(i)))) { 
+			cleanStr += isbn.charAt(i);
 		}
 	}
 	return cleanStr;
@@ -42,7 +42,8 @@ function isbnLength(isbn) {
 **/
 
 function isbnCheck(isbn) {
-	return (cleanString(isbn).charAt([isbn.length-1])).toString();
+	
+	return (cleanString(isbn).charAt(cleanString(isbn).length-1));
 }
 
 /**
@@ -52,15 +53,14 @@ function isbnCheck(isbn) {
 **/
 
 function regPrefix(isbn) {
-	let cleanIsbn = cleanString(isbn);
 	let regGroup = "";
 	for (let i = 0; i < 3; i++){
-		regGroup += cleanIsbn.charAt(i);
+		regGroup += cleanString(isbn).charAt(i);
 	}
 	return regGroup;
 }
 
-//** Code for the output of the application **//
+//** Code for the output of the application to the console **//
 
 console.log("The ISBN is " + ISBN);
 console.log("This is a " + isbnLength(ISBN) + " digit ISBN");
