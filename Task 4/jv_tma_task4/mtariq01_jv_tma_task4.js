@@ -14,13 +14,18 @@ let lakes = {
     4:{name: "Lake Vostok", depth: 546},
     5:{name: "Lake Baikal", depth: 897}
 };
-
+let deepestDepth = 0;
+let deepestLake = "";
 for (let key1 in lakes){
     for (let key2 in lakes[key1]){
-        console.log(lakes[key1].name);
-        console.log(lakes[key1].depth);
+        if (lakes[key1].depth > deepestDepth) {
+            deepestDepth = lakes[key1].depth;
+            deepestLake = lakes[key1].name;
+        }
+        }
     }
-}
+console.log(deepestLake);
+console.log(deepestDepth);
 
 
 
