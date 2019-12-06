@@ -6,32 +6,61 @@
 **/
 
 
-let lakes = {
-    0:{name: "Caspian Sea", depth: 560},
-    1:{name: "Tarn Hows", depth: 53},
-    2:{name: "Crater Lake", depth: 324},
-    3:{name: "Lake Tanganyika", depth: 803},
-    4:{name: "Lake Vostok", depth: 546},
-    5:{name: "Lake Baikal", depth: 897}
-};
-let deepestDepth = 0;
-let deepestLake = "";
-for (let key1 in lakes){
-    for (let key2 in lakes[key1]){
-        if (lakes[key1].depth > deepestDepth) {
-            deepestDepth = lakes[key1].depth;
-            deepestLake = lakes[key1].name;
-        }
+
+/**
+ ** Function to get the deepest lake.
+ ** takes as an argument lakeData of type nested object.
+ ** @return an array containing the name of deepest lake and the depth of corresponding deepest lake.
+ **/
+
+function deepestLake(lakeData){
+    let deepestDepth = 0;
+    let deepestLake = "";
+    for (let key1 in lakeData){
+        for (let key2 in lakeData[key1]){
+            if (lakeData[key1].depth > deepestDepth) {
+                deepestDepth = lakeData[key1].depth;
+                deepestLake = lakeData[key1].name;
+            }
         }
     }
-console.log(deepestLake);
-console.log(deepestDepth);
+    return [deepestLake,deepestDepth];
+}
 
+/**
+ ** Function to convert the depth given in fathoms into metres
+ ** takes as an argument depth of type Number.
+ ** @return a Number containing the depth in meters.
+ **/
 
+function depthInMeters(depth){
+    //conversion multiplier source: https://www.unitconverters.net/length/fathom-to-meter.htm
+    return depth * 1.8288;
+}
 
+/**
+ ** Function to display the deepest lake name and its depth in metres in the console.
+ ** takes as an argument lakeData of type Immediately Invoked Function Expression containing nested object.
+ ** @return output to console the deepest lake name and depth in meters.
+ **/
 
+function displayDeepestLake(){
+    let lakeData = {
+        0:{name: "Caspian Sea", depth: 560},
+        1:{name: "Tarn Hows", depth: 53},
+        2:{name: "Crater Lake", depth: 324},
+        3:{name: "Lake Tanganyika", depth: 803},
+        4:{name: "Lake Vostok", depth: 546},
+        5:{name: "Lake Baikal", depth: 897}
+    };
+    let deepestLakeData = deepestLake(lakeData);
+    let deepestLakeName = deepestLakeData[0];
+    let deepestLakeDepth = depthInMeters(deepestLakeData[1]).toFixed(2);
+    console.log("The deepest lake is: " + deepestLakeName);
+    console.log("This lake is " + deepestLakeDepth + "m deep.");
+}
 
-
-
+//** Calling the function displayDeepestLae to produce output on console **//
+displayDeepestLake();
 
 
