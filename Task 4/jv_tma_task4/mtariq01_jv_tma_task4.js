@@ -40,19 +40,21 @@ function depthInMeters(depth){
 
 /**
  ** Function to display the deepest lake name and its depth in metres in the console.
- ** takes as an argument lakeData of type Immediately Invoked Function Expression containing nested object.
  ** @return output to console the deepest lake name and depth in meters.
  **/
 
 function displayDeepestLake(){
-    let lakeData = {
-        0:{name: "Caspian Sea", depth: 560},
-        1:{name: "Tarn Hows", depth: 53},
-        2:{name: "Crater Lake", depth: 324},
-        3:{name: "Lake Tanganyika", depth: 803},
-        4:{name: "Lake Vostok", depth: 546},
-        5:{name: "Lake Baikal", depth: 897}
-    };
+    let lakeData = (function (){
+        let lake = {
+            0:{name: "Caspian Sea", depth: 560},
+            1:{name: "Tarn Hows", depth: 53},
+            2:{name: "Crater Lake", depth: 324},
+            3:{name: "Lake Tanganyika", depth: 803},
+            4:{name: "Lake Vostok", depth: 546},
+            5:{name: "Lake Baikal", depth: 897}
+        };
+        return lake;
+    })();
     let deepestLakeData = deepestLake(lakeData);
     let deepestLakeName = deepestLakeData[0];
     let deepestLakeDepth = depthInMeters(deepestLakeData[1]).toFixed(2);
