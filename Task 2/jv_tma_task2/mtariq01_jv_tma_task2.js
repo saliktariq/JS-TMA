@@ -21,7 +21,7 @@ function fuelEfficiencyMetric(kilometers, litres){
 **/ 
  
 function fuelEfficiencyImperial(kilometers, litres){
-	/** @param miles and gallons of type Number to contain converted values 
+	/** Variables miles and gallons of type Number to contain converted values 
 	    Coversion value source(s): 
 		https://www.metric-conversions.org/volume/uk-gallons-to-liters.htm
         https://www.metric-conversions.org/length/kilometers-to-miles.htm
