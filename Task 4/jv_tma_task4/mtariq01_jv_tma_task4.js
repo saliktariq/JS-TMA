@@ -5,13 +5,15 @@
 **  @author Salik Tariq
 **/
 
-let lakeData = {};
-lakeData.assign = {name: "Caspian Sea", depth: 560};
-lakeData.assign = {name: "Tarn Hows", depth: 53};
-lakeData.assign = {name: "Crater Lake", depth: 324};
-lakeData.assign = {name: "Lake Tanganyika", depth: 803};
-lakeData.assign = {name: "Lake Vostok", depth: 546};
-lakeData.assign = {name: "Lake Baikal", depth: 897};
+
+let lakes = [
+    {name: "Caspian Sea", depth: 560},
+    {name: "Tarn Hows", depth: 53},
+    {name: "Crater Lake", depth: 324},
+    {name: "Lake Tanganyika", depth: 803},
+    {name: "Lake Vostok", depth: 546},
+    {name: "Lake Baikal", depth: 897}
+];
 
 
  
